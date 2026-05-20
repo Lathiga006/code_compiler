@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Compiler</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1> Code Compiler</h1>
+      <p>Write code, run it, and inspect output in a professional editor layout with clean controls and execution history.</p>
+    </header>
+
+    <div class="layout-grid">
+      <aside class="sidebar">
+        <div class="panel sidebar-panel">
+          <div class="panel-header">
+            <h2>Editor Controls</h2>
+          </div>
+
+          <div class="sidebar-section">
+            <label>
+              Language
+              <select id="language-select">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="sidebar-section buttons-row">
+            <button id="save-button" class="secondary">Save</button>
+            <button id="load-button" class="secondary">Load</button>
+          </div>
+          <div class="sidebar-section buttons-row">
+            <button id="reset-button" class="secondary">Reset</button>
+            <button id="copy-button" class="secondary">Copy output</button>
+          </div>
+          <div class="sidebar-section">
+            <button id="clear-console-button" class="secondary">Clear console</button>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+      <div class="panel editor-panel">
+        <div class="panel-header editor-header">
+          <div class="editor-header-left">
+            <h2>Code Editor</h2>
+            <div class="editor-actions">
+              <button id="run-button">Run Code</button>
+              <button id="format-button" class="secondary">Format Code</button>
+            </div>
+          </div>
+        </div>
+        <textarea id="code-editor" class="code-editor" spellcheck="false"></textarea>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="panel-header">
+          <h2>Output Console</h2>
+          <span id="status-label">Ready</span>
+        </div>
+        <pre id="output-console"></pre>
+        <div class="history-panel">
+          <div class="history-header">
+            <h3>Run History</h3>
+          </div>
+          <div id="history-list"></div>
+        </div>
+      </div>
+    </main>
+    </div>
+
+    <footer>
+      <p>Supported languages: JavaScript, Python, C, C++. Your code is stored locally in browser storage.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
